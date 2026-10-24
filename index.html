@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#1F3A2A">
+<title>Test Armas D·E · Licencia de armas</title>
+<meta name="description" content="Simulacros del examen teórico de la licencia de armas D y E con el banco oficial de la Guardia Civil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('armas_theme_v1');
+    if(!t){ t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'; }
+    if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="armas.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Armas D·E">
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <button type="button" class="brand" data-action="goHome" aria-label="Ir al inicio">
+      <span class="brand-logo" id="brandLogo"></span>
+      <div>
+        <h1>Armas <span>D·E</span></h1>
+        <div class="sub" id="topbarSub">Examen teórico de la licencia</div>
+      </div>
+    </button>
+    <div class="topbar-actions">
+      <button class="theme-toggle" id="themeToggle" data-action="toggleTheme" aria-label="Cambiar tema" title="Cambiar tema">
+        <span id="themeIcon"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="screen"></div>
+
+  <div class="brand-footer">Licencia de armas D y E</div>
+</div>
+
+<script src="data.js"></script>
+<script src="store.js"></script>
+<script src="app.js"></script>
+<script>
+if('serviceWorker' in navigator && location.protocol === 'https:'){
+  window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+}
+</script>
+</body>
+</html>
