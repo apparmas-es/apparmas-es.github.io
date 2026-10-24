@@ -1,0 +1,65 @@
+/* ============================================================
+   Tema de color de "Test Armas D·E" sobre la base de estilos de TES Test.
+   Verde monte + naranja de caza.
+   ============================================================ */
+:root{
+  --navy:#1F3A2A;
+  --navy-2:#2C5238;
+  --primary:#3F7A4E;
+  --primary-light:#B9DCA9;
+  --hivis:#F28C1E;
+  --hivis-press:#C66F0C;
+  --hivis-green:#2F5D3A;
+  --siren:#F28C1E;
+  --bg:#EEF2EC;
+  --border:#D6DFD3;
+  --accent-text:#2F6B3F;
+  --select-bg:#E3F0E2;
+  --tap-bg:#E2EAE0;
+  --banner-bg:#FFF4E3;
+}
+[data-theme="dark"]{
+  --bg:#0E1711;
+  --card-bg:#17261C;
+  --border:#2A3E2F;
+  --accent-text:#9FD08B;
+  --tap-bg:#1E3125;
+  --select-bg:#1F3A27;
+  --banner-bg:#2A2010;
+}
+.hero p{color:#D9E8D3;}
+.stat span{color:#CCDDC6;}
+.mode-toggle{color:#D9E8D3;}
+.topbar .sub{color:var(--primary-light);}
+
+.brand-logo{background:var(--hivis);}
+
+/* Tarjetas por tema en el inicio */
+.tema-list{display:flex; flex-direction:column; gap:8px;}
+.tema-item{background:var(--card-bg); border:1px solid var(--border); border-radius:10px; padding:11px 14px;}
+.tema-item .ti-top{display:flex; justify-content:space-between; gap:10px; font-size:13.5px; margin-bottom:6px; align-items:baseline;}
+.tema-item .ti-top b{color:var(--text); font-weight:600;}
+.tema-item .ti-top span{color:var(--text-muted); white-space:nowrap; font-size:12.5px;}
+.tema-item .ti-roman{font-family:var(--font-head); color:var(--accent-text); font-weight:800; margin-right:6px;}
+
+.rules-card{background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:12px 14px; font-size:13.5px; color:var(--text-muted); line-height:1.45;}
+.rules-card b{color:var(--text);}
+
+.exam-note{font-size:13px; color:var(--text-muted); text-align:center; margin:12px 18px 0;}
+.option.chosen{border-color:var(--hivis); background:var(--banner-bg);}
+.option.chosen .letter{background:var(--hivis); color:#fff;}
+.dot.answered-exam{background:var(--navy-2); color:#fff; border-color:var(--navy-2);}
+[data-theme="dark"] .dot.answered-exam{background:var(--primary); border-color:var(--primary);}
+
+.review-item .ra.user-blank{background:var(--tap-bg); color:var(--text-muted);}
+.review-filter{display:flex; gap:8px; margin-bottom:12px;}
+.review-filter button{flex:1; padding:9px; font-size:13.5px;}
+.review-filter button.active{border-color:var(--accent-text); color:var(--accent-text); background:var(--select-bg);}
+
+.modal-back{position:fixed; inset:0; background:rgba(0,0,0,0.45); display:flex; align-items:flex-end; justify-content:center; z-index:50; padding:16px;}
+.modal{background:var(--card-bg); color:var(--text); border-radius:16px; padding:20px 18px 16px; width:100%; max-width:440px;}
+.modal h3{font-size:22px; text-transform:uppercase; margin-bottom:6px;}
+.modal p{margin:0 0 16px; color:var(--text-muted); font-size:14.5px;}
+.modal .bottom-actions{margin-top:0;}
+.topbar{top:env(safe-area-inset-top, 0px);}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:10; background:var(--navy);}
